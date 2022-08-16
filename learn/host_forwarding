@@ -1,0 +1,92 @@
+
+HOST FORWARDING (Cum traverseaza un pachet intre doua retele):
+
+MAC Address Table : mapeaza porturile switch-ului (Switchport) la adresele MAC 
+ARP Table/Cache : mapeaza adresele IP la adresele MAC
+Routing Table : mapeaza adresele de retea la interfetele de retea sau la router-ul urmator (Next Router sau Next hop IP address)
+	
+	
+		
+		
+ <--------------11.11.11.0/24--------------------> | <--------------------22.22.22.0/24------------------------>
+
+		
+	HOST 1 ----------| 						       |------------- HOST 3
+     [11.11.11.10]       |						       |	    [22.22.22.30]
+	[MAC : aaaa]     | 						       |		[MAC : cccc]
+			 |  	      [MAC : ee01] | [MAC : ee02]	       |
+			 |[+1]	      [11.11.11.1] | [22.22.22.1]   	       |[+6]
+			 switch 1 [+3]--------- ROUTER 1 -----------[+4] switch 2
+			 |[+2]						       |[+5]
+			 |						       |
+			 |						       |
+			 |						       |
+	HOST 2 ----------|						       |------------- HOST 4
+    [11.11.11.20]									     [22.22.22.40]
+      [MAC : bbbb]										 [MAC : dddd]
+      
+      
+      --------------------------                      	---------------------------
+      ROUTER 1 --- Routing Table			ROUTER 1 --- ARP Table
+ 	eth1 11.11.11.0/24 DC				   11.11.11.10    aaaa
+ 	eth2 22.22.22.0/24 DC				   22.22.22.40    dddd
+      --------------------------			---------------------------
+      
+      --------------------------
+      HOST 1 --- ARP Table
+      	 11.11.11.1   ee01
+      --------------------------
+      
+      --------------------------
+      switch 1 --- MAC Address Table
+         [+1]   aaaa.aaaa.aaaa
+         [+3]   ee01.ee01.ee01
+      --------------------------
+      
+      --------------------------
+      switch 2 --- MAC Address Table
+         [+4]   ee02.ee02.ee02
+         [+5]   dddd.dddd.dddd
+      --------------------------
+      
+      --------------------------
+      HOST 4 --- ARP Table
+      	 22.22.22.1   ee02
+      --------------------------
+      
+      
+      HOST 1 vrea sa trimita date catre HOST 4: (scop didactic: tabelele nu au nicio informatie, se populeaza atunci cand se descopera pe retea, cu exceptia ROUTER1 - Routing Table)
+      
+      1. host 1 stie deja adresa IP a hostului 4
+      2. host 1 creeaza un Layer3 Header(SRC + DST IP Address)
+      3. host 1 stie ca host 4 nu se afla in aceeasi retea cu el (isi da seama din adresa IP a destinatiei[22.22.22.40] ca nu se afla in reteaua 11.11.11.0/24)
+      4. daca nu se afla destinatia in aceeasi retea, atunci frame-ul este trimis catre router-ul default (default gateway), dar host 1 nu stie adresa MAC a router-ului;
+   	 host 1 trimite un ARP request catre 11.11.11.1 [ROUTER 1] pentru a-i descoperi adresa MAC;
+   	 switch 1 primeste un ARP request de la host 1 pe switchport-ul [+1];
+   	 switch 1 trece adresa MAC in ARP Table si mapeaza adresa la portul [+1];
+   	 switch 1 face "flood" pe toate porturile lui cu exceptia portului de unde a primit ARP request-ul;
+      	 host 2 da "drop" pachetului primit de la switch 1 pentru ca adresa IP din frame-ul primit nu coincide cu adresa lui IP;
+      	 router-ul primeste frame-ul de la switch 1 si trece in ARP table adresa IP a hostului 1 mapata la adresaa MAC a acestuia [11.11.11.10 <-> aaaa];
+      	 router-ul genereaza un ARP reply;
+      	 switch 1 invata adresa MAC a router-ului si o mapeaza la switchport-ul [+3];
+      	 switch 1 da forward la ARP reply-ul trimis de catre router pe portul [+1] [11.11.11.10];
+      	 host 1 primeste ARP reply-ul de la switch 1 si trece in ARP table adresa IP a route-ului mapata la adresa MAC [11.11.11.1 <-> ee01];
+      	 host 1 adauga un Layer2 Header (SRC + DST MAC Address) pentru a trimite frame-ul [DST MAC == ee01.ee01.ee01];
+      	 switch 1 primeste frame-ul de la host 1;
+      	 switch 1 face forward frame-ului pentru ca deja are in MAC Address Table portul pe care trebuie sa trimita frame-ul;
+      	 router-ul primeste frame-ul si "arunca" Layer2;
+      	 router-ul se uita la Layer3 si vede destinatia 22.22.22.40 [host 4], iar pentru ca in Routing Table exista o ruta catre destinatie nu da drop la pachet, altfel ii da
+      	 router-ul trimite un ARP request pentru a descoperi adresa MAC a hostului 4;
+      	 switch 2 primeste pachetul de la router pe switchport-ul [+4] si mapeaza adresa MAC ([+4] <-> ee02.ee02.ee02);
+      	 switch 2 face "flood" si trimite pe toate swithcport-urile ARP request-ul trimis de catre router;
+      	 host 3 da drop la pachet;
+      	 host 4 trece in ARP table adresa IP a sursei si adresa MAC [22.22.22.1 <-> ee02];
+      	 host 4 face ARP reply catre switch 2;
+      	 switch 2 trece in tabela adresa MAC a hostului 4 si o mapeaza la swithcport-ul de pe care a venit pachetul ([+5] <-> dddd.dddd.dddd);
+      	 switch 2 face forward pachetului trimis de host 4 catre router;
+      	 router-ul trece in ARP table adresa MAC a hostului 4 si o mapeaza la adresa IP [22.22.22.40 <-> dddd]; 
+      	 router-ul adauga un Layer2 Header(SRC + DST MAC Address) si trimite pachetul catre destinatie;
+      	 switch 2 primeste frame-ul si il trimite pe switchport-ul din MAC Address Table corespunzator adresei MAC din Layer2;
+      	 host 4 primeste frame-ul de la switch 2 si il desface pentru a vedea datele;
+      	 
+      	
