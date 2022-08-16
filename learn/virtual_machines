@@ -1,0 +1,45 @@
+Link-uri utile:
+
+# https://www.oracle.com/ro/cloud/compute/virtual-machines/what-is-virtual-machine/
+# https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-a-virtual-machine/#overview
+# https://www.informit.com/articles/article.aspx?p=1627061
+# https://www.vmware.com/topics/glossary/content/hypervisor.html
+# Type 1: https://www.youtube.com/watch?v=sVTw7sHpnRc&list=PLnrmLjoInKWjIZNuYi_o9PxN-G51PiTj9&index=2
+# Type 2: https://www.youtube.com/watch?v=xTkvClJZmyA&list=PLnrmLjoInKWjIZNuYi_o9PxN-G51PiTj9&index=3
+
+Ce este virtualizarea?
+
+- virtualizarea este procesul de creare a software-ului/versiunea virtuala a unui computer cu CPU, memorie, spatiu de stocare care sunt imprumutate de la sistemul nativ/sistemul host(adica cel care nu ruleaza pe masina virtuala, care poate sa fie computer-ul personal sau un server remote)
+
+Ce este o masina virtuala?
+
+- este un program(deci e software) numit de obicei o "imagine" care se comporta ca un computer nou
+- foloseste resursele hostului (CPU, memorie, spatiu de stocare pentru date)
+- e izolata de sistemul de operare primar(adica cel nativ) si de celelalte masini virtuale care pot rula pe computer
+
+Hypervisor (Virtual Machine Monitor - VMM):
+
+	- scopul sau este de a permite mai multor masini virtuale sa partajeze o singura platforma hardware
+	- sunt doua tipuri de Hypervisor (type 1 and type 2)
+	- Type 1 (bare-metal hypervisor): 
+		- ruleaza direct pe hardware-ul masinii gazda (nu are sistem de operare) 
+		- interactiunea se face cu ajutorul unui program software numit Management Software (ex: vSphere Client) pentru a controla diverse instante ale sistemelor de operare
+	- Type 2 (hosted hypervisor):
+		- program software care se instaleaza pe sistemul de operare al masinii gazda
+	
+# https://www.virtualbox.org/manual/ch06.html#network_nat	
+VirtualBox Network Adapters:
+ 	- NAT (Network Address Translation):
+ 		- primeste o adresa IP si cu ajutorul VBox Networking Engine care are implementat NAT o traduce la adresa IP a masinii gazda
+ 		- masinile virtuale configurate pe NAT nu pot vorbi una cu cealalta
+ 	- Bridged:
+ 		- foloseste un driver numit net filter driver care filtreaza traficul de date de pe NIC(Network interface card)
+ 		- creeaza o interfata noua pe care o foloseste VirtualBox cu scopul de comunica in reteaua fizica
+ 		- host-urile intr-o retea bridged pot comunica intre ele
+ 	- Internal Network:
+ 		- mod creat pentru a comunica doar masinile virtuale intre ele
+ 		- masinile virtuale nu pot fi accesate din retele exterioare si nici nu pot comunica cu masina gazda
+ 	- Host-Only Network:
+ 		- similar cu internal network, in plus fiind faptul ca si masina gazda poate comunica cu masinile virtuale
+ 	
+ 	 		
