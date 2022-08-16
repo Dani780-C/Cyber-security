@@ -1,0 +1,115 @@
+
+
+Network interfaces sau network adapters:
+
+	locatie: /etc/network/interfaces => fisierul de configurare pentru interfete
+	- e punctul in care se face conexiune cu calculatorul si reteaua
+	- imbina software-ul si hardware-ul pentru trafic de retea
+	
+Linux-ul cunoaste doua tipuri de interfete de retea:
+	
+	1. interfata de retea fizica (physical network interface)
+		=> se refera la .NIC (Network Interface Card), adica chiar la componenta tehnica in sine
+			        .WNIC (Wireless Network Interface Card)
+			        .modem
+		
+	2. interfata de retea virtuala (virtual network interface)
+		=> nu reprezinta o bucata de hardware, dar este conectata cu un device de retea
+		=> poate fi asociat cu o interfata fizica sau virtuala
+		
+Cum sunt numite aceste interfete:
+
+	1. old-style name:
+		eth0, eth1, wlan0
+	2. new one:
+		enp3s0, wlp2s0 => bazata pe locatia fizica a hard-ului (bus 3 slot 2)
+		
+Comanda pentru afisare imediata a tuturor numelor interfetelor de retea:
+	ls /sys/class/net
+	
+Comenzi pentru mai multe detalii despre interfetele de retea:
+	ip link sau ifconfig
+	
+Pentru a afla adresa IP putem folosi comanda:
+	ip addr
+	
+Comenzile ifup si ifdown folosesc fisierul de configurare interfaces (/etc/network/interfaces), fara el nu functioneaza!!
+
+CONFIGURARE FISIER interfaces:
+	
+	auto <interface>
+		=> pentru a porni o interfata la boot time automat
+	
+	iface <interface> <address_family> <method>
+		=> pentru a declara o interfata noua
+		=> inet (internet protocol family aka IPv4)
+		=> inet6 pentru IPv6
+		=> ex: iface eth0 inet dhcp (atribuie automat o adresa IP folosind un server DHCP)
+		
+	<method> 1. dhcp pentru dinamic
+		 2. static:
+		 	trebuie sa setam adresa IP, network mask and gateway
+		 	ex: 	address 192.168.1.100 
+				netmask 255.255.255.0 
+				gateway 192.168.1.1
+		 		
+	dns-nameservers 8.8.8.8 8.8.4.4 (pentru configurarile DNS-ului)
+	
+	exemplu pentru a defini o interfata manual fara sa ii asignezi o adresa IP
+	ex: iface <interface> inet manual
+	
+	post-up <command>
+		=> pentru a executa o comanda dupa ce dai enable unei interfete
+	pre-up <command>
+		=> pentru a executa o comanda inainte sa dai enable unei interfete
+	pre-down <command>
+		=> pentru a executa o comanda dupa ce dai disable unei interfete
+	post-down <command>
+		=> pentru a executa o comanda dupa ce dai disable unei interfete
+	
+Pentru ENABLE SI DISABLE manual a unei intefete:
+	- privilegii de super user (sudo) !!
+	
+	sudo ifup <interface> => ENABLE 
+	sudo ifdown <interface> => DISABLE
+	
+EXEMPLU PENTRU interfaces:
+	
+auto eth0 => pentru ENABLE la boot time
+iface eth0 inet static => nume eth0, IPv4, static pentru setari manuale
+    address 192.168.1.100 => adresa IP
+    netmask 255.255.255.0 => netmask 
+    gateway 192.168.1.1	  => gateway
+dns-nameservers 8.8.8.8 8.8.4.4 => 2 servere DNS
+pre-up /usr/local/sbin/start-iptables.sh => script pentru a porni un firewall inainte de a da ENABLE interfetei
+post-up /usr/local/sbin/backup-log.sh => script pentru a executa un backup dupa ce dam DISABLE interfetei
+
+!! Daca fisierul interfaces este gol, atunci inseamna ca sistemul foloseste alt tool pentru a configura reteaua. In multe distributii, Linux foloseste network manager pentru a configura reteaua.
+
+Pentru a nu interfera cu fisierul interfaces, trebuie sa oprim network manager:
+	sudo systemctl stop NetworkManager.service
+	sudo systemctl disable NetworkManager.service
+	
+
+		 	
+		 	
+		 	
+		 	
+		 	
+		 	
+		 	
+		 	
+		 	
+		 	
+		 	
+		 	
+		 	
+		 	
+		 	
+		 	
+		 	
+		 		
+	
+
+	
+
