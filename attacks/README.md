@@ -1,5 +1,7 @@
 ### Atac FTP:
 
+   - [Despre FTP](https://github.com/Dani780-C/Cyber-security/blob/main/learn/_ftp)
+   - [Captura traficului pentru serviciului FTP in timpul atacului](https://github.com/Dani780-C/Cyber-security/blob/main/captures/ftp-traffic.pcapng)
    - versiune: *vsftpd 2.3.4*
    [In 2011, in arhiva de pe site-ul oficial al serviciului FTP a fost atasat un virus backdoor care executa un shell pe portul 6200. Pentru a executa virusul, username-ul folosit la conectarea serviciului FTP putea fi oricare sir de caractere urmat de un ":)"]
 
@@ -37,3 +39,5 @@
         6200 <-> portul pe care ne conectam
         ```     
       ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/ftp-done.png)
+      
+      
