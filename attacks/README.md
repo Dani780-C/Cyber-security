@@ -14,3 +14,26 @@
         -p21,6200 <-> scanam doar porturile 21 si 6200
         ```
      ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/ftp-nmap-1.png)
+
+     Se poate observa ca portul 6200 inca nu este deschis.
+     
+         ftp 192.168.56.102 21
+     
+     ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/ftp-2.png)
+     
+         nmap 192.168.56.102 -p6200
+         
+     ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/ftp-nmap-2.png)
+     
+     Se poate vedea dupa o inca scanare a portului 6200 ca acum este deschis.
+     
+         nc -v 192.168.56.102 6200
+         
+      ##### Explicatii comanda:
+        ```
+        nc <-> netcat
+        -v <-> verbose
+        192.168.56.102 <-> adresa IP a tintei
+        6200 <-> portul pe care ne conectam
+        ```     
+      ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/ftp-done.png)
