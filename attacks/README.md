@@ -8,4 +8,4 @@
       1. nmap -sSV 192.168.56.102 -p21,6200
          []
          
-         ![My Image](imgs/ftp-nmap-1.png)
+         ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/ftp-nmap-1.png)
