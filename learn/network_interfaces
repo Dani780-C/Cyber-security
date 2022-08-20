@@ -90,26 +90,3 @@ Pentru a nu interfera cu fisierul interfaces, trebuie sa oprim network manager:
 	sudo systemctl stop NetworkManager.service
 	sudo systemctl disable NetworkManager.service
 	
-
-		 	
-		 	
-		 	
-		 	
-		 	
-		 	
-		 	
-		 	
-		 	
-		 	
-		 	
-		 	
-		 	
-		 	
-		 	
-		 	
-		 	
-		 		
-	
-
-	
-
