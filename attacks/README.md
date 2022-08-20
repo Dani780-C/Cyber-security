@@ -8,4 +8,4 @@
       1. nmap -sSV 192.168.56.102 -p21,6200
          []
          
-         [!alt text]
+         ![alt text](./imgs/ftp-nmap-1.png)
