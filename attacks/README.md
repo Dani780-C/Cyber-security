@@ -13,4 +13,4 @@
         192.168.56.102 <-> adresa IP a tintei (Metaplsoitable 2)
         -p21,6200 <-> scanam doar porturile 21 si 6200
         ```
-   ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/ftp-nmap-1.png)
+     ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/ftp-nmap-1.png)
