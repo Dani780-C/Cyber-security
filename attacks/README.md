@@ -8,4 +8,4 @@
       1. nmap -sSV 192.168.56.102 -p21,6200
          []
          
-         ![Screenshot from 2022-08-20 14-41-39](https://user-images.githubusercontent.com/79227896/185744783-2dd3dbf5-0cc2-4865-ada6-3aa426d8ec1a.png)
+         [!alt text]
