@@ -9,15 +9,17 @@
       
          nmap -sSV 192.168.56.102 -p21,6200
      ##### Explicatii comanda:
-        ```
-        nmap <-> tool pentru a scana servicii
-        -sSV <-> Stealth scan version
-        192.168.56.102 <-> adresa IP a tintei (Metaplsoitable 2)
-        -p21,6200 <-> scanam doar porturile 21 si 6200
-        ```
+        - [nmap command](https://github.com/Dani780-C/Cyber-security/blob/main/tools/nmap.md)
+        - 192.168.56.102 <-> adresa IP a tintei (Metaplsoitable 2)
+        - -p21,6200 <-> scanam doar porturile 21 si 6200 (21 este portul pentru serviciul FTP, iar 6200 este cel pe care se va efectua un reverse shell)
+  
      ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/ftp-nmap-1.png)
 
-     Se poate observa ca portul 6200 inca nu este deschis.
+     Se poate observa ca portul 6200 inca nu este deschis.  
+     Folosim comanda ftp pentru a ne conecta la serviciul FTP.  
+     Dupa ce vom executa aceasta comanda, va trebui sa introducem datele de login (user si parola).  
+     Pentru user vom folosi orice string urmat de ":)", iar parola poate fi nula sau orice string.  
+     Despre vulnerabilitate: [vsftpd backdoored](https://scarybeastsecurity.blogspot.com/2011/07/alert-vsftpd-download-backdoored.html)
      
          ftp 192.168.56.102 21
      
@@ -27,17 +29,10 @@
          
      ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/ftp-nmap-2.png)
      
-     Se poate vedea dupa o inca scanare a portului 6200 ca acum este deschis.
+     Se poate vedea dupa o inca scanare a portului 6200 ca acum este deschis, deci ne vom folosi de [netcat](https://github.com/Dani780-C/Cyber-security/blob/main/tools/netcat.md) pentru a ne conecta.
      
          nc -v 192.168.56.102 6200
-         
-      ##### Explicatii comanda:
-        ```
-        nc <-> netcat
-        -v <-> verbose
-        192.168.56.102 <-> adresa IP a tintei
-        6200 <-> portul pe care ne conectam
-        ```     
+             
       ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/ftp-done.png)
      
    - Analiza trafic:
