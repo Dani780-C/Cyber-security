@@ -13,4 +13,34 @@
           - criptare simetrica (symmetrical encryption)
           - criptare asimetrica (asymmetrical encryption)
           - hashing
-    - 
+    - Criptare simetrica (Symmetric encryption):
+          - cunoscuta si sub numele de shared key encryption sau shared secret encryption
+          - foloseste o singura cheie sau o pereche de chei care sunt folosite pentru criptare si decriptare pentru ambele parti (client si server)
+          - procesul de creeare a unei chei simetrice este efectuat de key exchange algorithm
+                - prin folosirea unui key exchange algorithm ambele parti (client si server) ajung la o cheie secreta calculata independent de fiecare in parte prin trmiterea unor date publice care sunt manipulate de catre anumite date private
+                - cheia secreta nu este niciodata transmisa de la un host la altul
+          - clientul si serverul isi trimit fiecare cate o lista de algoritmi de criptare pe care ii pot folosi (prima optiune de pe lista clientului pe care o poate suporta si serverul e folosita ca cipher alogoritm)
+     - Criptare asimetrica (Asymmetric encryption)
+          - foloseste 2 chei asociate: private key si public key
+          - relatia matematica dintre cele doua chei permite cheii publice sa cripteze datele si sa fie descriptate doar cu cheia privata
+          - aceasta pereche de chei poate fi folosita pentru autentificarea unui client pe un server
+                - clientul creeaza o pereche de chei (public si private) si o trmite serverului pe cea publica
+                - aceasta cheie publica este pastrata pe server intr-un fisier numit "authorized_keys" in directorul "~/.ssh" in contul user-ului cu care vrei sa te autentifici
+                - serverul foloseste aceasta cheie publica sa cripteze un "challenge message" pe care il trimite clientului
+                - daca clientul poate dovedi ca a putut decripta mesajul primit de la server, atunci a demonstrat ca detine cheia privata
+     - SSH poate fi configurat pentru a folosi diferite symmetrical cipher systems:
+          - Advanced Encryption Standard (AES)
+          - Blowfish
+          - 3DES
+          - CAST128
+          - Arcfour
+          - International Data Encryption Algorithm (IDEA)
+          
+  - [Video - Cryptography Basics - SSH Protocol Explained](https://www.youtube.com/watch?v=0Sffl7YO0aY)
+  - [Encryption, Port and Connection](https://www.hostinger.com/tutorials/ssh-tutorial-how-does-ssh-work)
+  - [SSH Encryption and Connection Process](https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process)
+  - [Symmetric Cipher](https://www.hypr.com/symmetric-cipher/)
+  - [How SSH establishes secure communication](https://www.redhat.com/sysadmin/ssh-secure-communication)
+  - [What, Why and How of SSH Protocol](https://www.keyfactor.com/blog/ssh-protocol/)
+  - [Key Exchange](https://www.jscape.com/blog/key-exchange)
+  - [Cipher Suites](https://docs.microsoft.com/en-us/windows/win32/secauthn/cipher-suites-in-schannel)
