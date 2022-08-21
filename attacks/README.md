@@ -57,4 +57,5 @@
         ```
      ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/nmap-ssh-p22.png)
      
+     Pentru atacul asupra serviciului SSH am folosit metoda brute-force cu ajutorul tool-ului [hydra](https://github.com/Dani780-C/Cyber-security/blob/main/tools/hydra.md).
      
