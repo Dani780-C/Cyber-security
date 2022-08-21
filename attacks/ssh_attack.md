@@ -1,7 +1,6 @@
 ### Atac SSH:
 
    - [Despre SSH](https://github.com/Dani780-C/Cyber-security/blob/main/learn/_ssh.md)
-   - [Captura traficului pentru serviciului SSH in timpul atacului](https://github.com/Dani780-C/Cyber-security/blob/main/captures/ssh-traffic-while-attack.pcapng)
    - versiune: *OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)*
    - Pasii atacului:
          
@@ -29,3 +28,6 @@
       Acum putem folosi serviciul SSH pentru a ne conecta la serverul remote cu ajutorul credentialelor gasite.
       
       ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/msfadmin-ssh-login.png)
+
+   - Analiza trafic:
+      - [Captura traficului pentru serviciului SSH in timpul atacului](https://github.com/Dani780-C/Cyber-security/blob/main/captures/ssh-traffic-while-attack.pcapng)
