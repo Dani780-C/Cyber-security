@@ -42,3 +42,7 @@
      
    - Analiza trafic:
       - [Captura traficului pentru serviciului FTP in timpul atacului](https://github.com/Dani780-C/Cyber-security/blob/main/captures/ftp-traffic.pcapng)
+      - Pentru a filtra traficul din captura wireshark se poate folosi filtrul *tcp.stream eq 0* pentru a vedea doar pachetele dintre atacator si tinta din prima conexiune esuata
+      ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/ftp-first-connection.png)
+      - Pentru a filtra traficul din captura wireshark se poate folosi filtrul *tcp.stream eq 1* pentru a doua conexiune pe portul 6200 prin care s-a efectuat un reverse shell
+      ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/ftp-second-conn-port-6200.png)
