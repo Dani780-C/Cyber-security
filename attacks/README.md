@@ -42,7 +42,7 @@
      
 ### Atac SSH:
 
-   - [Despre SSH](https://github.com/Dani780-C/Cyber-security/blob/main/learn/_ftp.md)
+   - [Despre SSH](https://github.com/Dani780-C/Cyber-security/blob/main/learn/_ssh.md)
    - [Captura traficului pentru serviciului SSH in timpul atacului](https://github.com/Dani780-C/Cyber-security/blob/main/captures/ftp-traffic.pcapng)
    - versiune: *OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)*
    - Pasii atacului:
