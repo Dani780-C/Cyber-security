@@ -1,7 +1,7 @@
 ### Atacuri:
    
-   - [FTP]()
-   - [SSH]()
+   - [FTP](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/ftp_attack.md)
+   - [SSH](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/ssh_attack.md)
    - [NetBIOS]()
    - [DOS]()
    - [MITM]()
