@@ -1,6 +1,7 @@
 ### Despre SMB:
     - Server Message Block
     - este un protocol de retea care faciliteaza comunicarea unui user cu host-uri remote (computere sau servere)
+    - este un network file sharing protocol
     - user-ul poate folosi resursele host-ului remote, sa distribuie, sa deschida si sa editeze fisiere
     - se bazeaza pe o schema de protocol client-server
     - foloseste portul 139 pentru a comunica host-uri de pe aceeasi retea (run over NetBIOS)
