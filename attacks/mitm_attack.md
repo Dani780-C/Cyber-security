@@ -8,6 +8,8 @@
           
           sysctl net.ipv4.ip_forward=1
           
+         ```sysctl (System Control) folosit pentru a vedea si pentru a seta parametrii kernel```
+          
     - Putina analiza a tabelelor ARP(ARP cache):  
           - folosind comanda *arp -a* vom putea vedea tabela ARP cu informatiile despre mapping-ul adreselor IP a masinilor de pe retea cu adresele lor MAC.  
           - **Pe masina cu Windows 11**:  
