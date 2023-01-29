@@ -4,8 +4,8 @@
 
 #### The project is structured on four directory:
 
-* [attacks]() - contains several attacks I launched on several machines.  
-* [captures]() - contains the traffic captured using Wireshark while attacking.  
-* [learn]() - contains information about services running on the machines.  
-* [tools]() - contains information and usage examples of tools that I used for attacks.  
+* [attacks](https://github.com/Dani780-C/Cybersecurity/tree/main/attacks) - contains several attacks I launched on several machines.  
+* [captures](https://github.com/Dani780-C/Cybersecurity/tree/main/captures) - contains the traffic captured using Wireshark while attacking.  
+* [learn](https://github.com/Dani780-C/Cybersecurity/tree/main/learn) - contains information about services running on the machines.  
+* [tools](https://github.com/Dani780-C/Cybersecurity/tree/main/tools) - contains information and usage examples of tools that I used for attacks.  
 
