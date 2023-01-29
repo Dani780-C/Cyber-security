@@ -1,19 +1,23 @@
 
-### Atac FTP:
+### FTP Attack:
 
-   - [Despre FTP](https://github.com/Dani780-C/Cyber-security/blob/main/learn/_ftp.md)
-   - versiune: *vsftpd 2.3.4*
-   [In 2011, in arhiva de pe site-ul oficial al serviciului FTP a fost atasat un virus backdoor care executa un shell pe portul 6200. Pentru a executa virusul, username-ul folosit la conectarea serviciului FTP putea fi oricare sir de caractere urmat de un ":)"]
+   - [About FTP](https://github.com/Dani780-C/Cyber-security/blob/main/learn/_ftp.md)
+   - version: *vsftpd 2.3.4*  
+   ```In 2011, in the download archive from the FTP service official site was attached a backdoor virus that was able to execute a shell on port 6200. To run the virus, the username for connecting FTP service could be any input followed by a ":)"```  
 
-   - Pasii atacului:
+   - How to hack:
       
-         nmap -sSV 192.168.56.102 -p21,6200
-     ##### Explicatii comanda:
-        - [nmap command](https://github.com/Dani780-C/Cyber-security/blob/main/tools/nmap.md)
-        - 192.168.56.102 <-> adresa IP a tintei (Metaplsoitable 2)
-        - -p21,6200 <-> scanam doar porturile 21 si 6200 (21 este portul pentru serviciul FTP, iar 6200 este cel pe care se va efectua un reverse shell)
-  
-     ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/ftp-nmap-1.png)
+         nmap -sSV 192.168.56.102 -p21,6200  
+     
+
+<div align="center">
+	<br>
+   <a href="https://github.com/Dani780-C/Cybersecurity/blob/main/attacks/header.svg">
+	<img src="header.svg" width="800" height="400" alt="Image">
+   </a>
+   <br>
+</div>
+
 
      Se poate observa ca portul 6200 inca nu este deschis.  
      Folosim comanda ftp pentru a ne conecta la serviciul FTP.  
