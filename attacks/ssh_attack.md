@@ -6,17 +6,17 @@
          
          nmap -sSV 192.168.56.102 -p22
      ##### Explicatii comanda:
-      - [nmap command](https://github.com/Dani780-C/Cyber-security/blob/main/tools/nmap.md)
+      - nmap command <!-- (https://github.com/Dani780-C/Cyber-security/blob/main/tools/nmap.md) -->
       - 192.168.56.102 <-> adresa IP a tintei (Metasploitable 2)
       - -p22 <-> scanam doar portul 22 (SSH foloseste portul 22 pentru server)
      
       ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/nmap-ssh-p22.png)
    
-      Pentru atacul asupra serviciului SSH am folosit metoda brute-force cu ajutorul tool-ului [hydra](https://github.com/Dani780-C/Cyber-security/blob/main/tools/hydra.md).
+      Pentru atacul asupra serviciului SSH am folosit metoda brute-force cu ajutorul tool-ului `hydra` <!--(https://github.com/Dani780-C/Cyber-security/blob/main/tools/hydra.md).-->
          
          hydra -t 4 -L users.txt -P passwords.txt 192.168.56.102 ssh
      ##### Explicatii comanda:
-      - [hydra tool](https://github.com/Dani780-C/Cyber-security/blob/main/tools/hydra.md)
+      - hydra tool <!-- (https://github.com/Dani780-C/Cyber-security/blob/main/tools/hydra.md) -->
       - users.txt <-> fisier in care sunt scrise diferite nume de useri
       - passwords.txt <-> fisier in care sunt scrise diferite parole
       - 192.168.56.102 <-> adresa IP a tintei (Metasploitable 2)
