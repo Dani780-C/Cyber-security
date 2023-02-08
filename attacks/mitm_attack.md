@@ -1,9 +1,9 @@
 ### Atac MITM (Man-in-the-middle):
-  - [Despre MITM](https://github.com/Dani780-C/Cyber-security/blob/main/learn/mitm.md)
+  <!-- - [Despre MITM](https://github.com/Dani780-C/Cyber-security/blob/main/learn/mitm.md) -->
   - Scopul atacului: dobandirea credentialelor unui user care se conecteaza de pe masina cu Windows 11 la masina Metasploitable 2 folosind protocolul *telnet*
   - Pasii atacului:
-    - Vom folosi tool-ul [ettercap](https://github.com/Dani780-C/Cyber-security/blob/main/tools/ettercap.md)(*ettercap-graphical*) pentru a redirectiona traficul dintre cele doua host-uri Metasploitable 2 si Windows 11.
-    - Atacul facut de mine se bazeaza pe tehnica [ARP poisoning](https://github.com/Dani780-C/Cyber-security/blob/main/learn/arp_poisoning.md).
+    - Vom folosi tool-ul `ettercap` <!-- (https://github.com/Dani780-C/Cyber-security/blob/main/tools/ettercap.md)-->(*ettercap-graphical*) pentru a redirectiona traficul dintre cele doua host-uri Metasploitable 2 si Windows 11.
+    - Atacul facut de mine se bazeaza pe tehnica `ARP poisoning` <!-- (https://github.com/Dani780-C/Cyber-security/blob/main/learn/arp_poisoning.md). -->
     - Primul pas este sa permitem masinii noastre(cea de pe care efectuam atacul) sa trimita mai departe pachetele primite chiar daca nu sunt pentru ea.
           
           sysctl net.ipv4.ip_forward=1
