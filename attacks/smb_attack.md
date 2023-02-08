@@ -8,7 +8,7 @@
          
     ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/nmap-scan-samba.png)
 
-    Pentru a descoperi versiunea finala a serviciului, putem folosi tool-ul [smbclient](https://github.com/Dani780-C/Cyber-security/blob/main/tools/smbclient.md).
+    Pentru a descoperi versiunea finala a serviciului, putem folosi tool-ul `smbclient` <!-- (https://github.com/Dani780-C/Cyber-security/blob/main/tools/smbclient.md).-->
         
          smbclient -L 192.168.56.102 -p 445
          
@@ -16,7 +16,7 @@
      
     ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/samba-version.png)
 
-    Problema cu aceasta versiune samba 3.0.20 apare la etapa de login a clientului. Prin folosirea [metacaracterelor](https://github.com/Dani780-C/Cyber-security/blob/main/learn/metacaractere.md) putem sa scapam de partea de login a username-ului si sa executam comenzi (command injection).  
+    Problema cu aceasta versiune samba 3.0.20 apare la etapa de login a clientului. Prin folosirea `metacaracterelor`<!--(https://github.com/Dani780-C/Cyber-security/blob/main/learn/metacaractere.md)--> putem sa scapam de partea de login a username-ului si sa executam comenzi (command injection).  
     
     Inainte de toate, trebuie sa avem un listener pe un anumit port pentru conexiuni exterioare. Intr-un terminal separat vom executa un netcat pentru a asculta pe portul 4444 orice conexiune: `nc -lvp 4444`.  
     In alt terminal, vom folosi smbclient pentru a ne conecta la serverul remote Metasploitable2: `smbclient //metasploitable/tmp`. Acum vine partea de autentificare in care vom apasa ENTER pentru a folosi command interface-ul smbclient.  
