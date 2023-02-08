@@ -2,9 +2,9 @@
   <!-- - [Despre HTTP / HTTPS](https://github.com/Dani780-C/Cyber-security/blob/main/learn/_http_https.md) -->
   - In scop didactic, am folosit **DVWA** (Damn Vulnerable Web App). Pentru instalare si informatii aditionale: [link](https://github.com/digininja/DVWA).
   - Cuprins:
-    - [Command Execution](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/http_attack.md#command-execution)
-    - [XSS reflected](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/http_attack.md#xss-reflected)
-    - [XSS stored](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/http_attack.md#xss-stored)  
+    - Command Execution <!-- (https://github.com/Dani780-C/Cyber-security/blob/main/attacks/http_attack.md#command-execution) -->
+    - XSS reflected <!-- (https://github.com/Dani780-C/Cyber-security/blob/main/attacks/http_attack.md#xss-reflected) -->
+    - XSS stored <!-- (https://github.com/Dani780-C/Cyber-security/blob/main/attacks/http_attack.md#xss-stored) -->
  
 ## **Command Execution**
    <!-- - [Despre Command Injection](https://github.com/Dani780-C/Cyber-security/blob/main/learn/command_injection.md) -->
