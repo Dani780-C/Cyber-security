@@ -31,7 +31,7 @@
          
      ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/ftp-nmap-2.png)
      
-     Se poate vedea dupa o inca scanare a portului 6200 ca acum este deschis, deci ne vom folosi de [netcat](https://github.com/Dani780-C/Cyber-security/blob/main/tools/netcat.md) pentru a ne conecta.
+     Se poate vedea dupa o inca scanare a portului 6200 ca acum este deschis, deci ne vom folosi de `netcat` pentru a ne conecta.
      
          nc -v 192.168.56.102 6200
              
