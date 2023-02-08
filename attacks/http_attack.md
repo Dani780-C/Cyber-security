@@ -7,7 +7,7 @@
     - [XSS stored](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/http_attack.md#xss-stored)  
  
 ## **Command Execution**
-   - [Despre Command Injection](https://github.com/Dani780-C/Cyber-security/blob/main/learn/command_injection.md)
+   <!-- - [Despre Command Injection](https://github.com/Dani780-C/Cyber-security/blob/main/learn/command_injection.md) -->
    - **Not hacked:** *introducem orice adresa IP (ex: 192.168.56.101)*  
    
      Raspuns:  
@@ -39,7 +39,7 @@
         ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/dvwa_command_injection_2.png)  
         
 ## **XSS (Reflected)**  
-  - [Despre XSS](https://github.com/Dani780-C/Cyber-security/blob/main/learn/xss.md)  
+  <!-- - [Despre XSS](https://github.com/Dani780-C/Cyber-security/blob/main/learn/xss.md) -->
   - **Hacked:**  
     
     **LOW**
@@ -65,7 +65,7 @@
        ![My Image](https://github.com/Dani780-C/Cyber-security/blob/main/attacks/imgs/dvwa_xss_reflected_medium_hacked.png)  
 
 ## **XSS (Stored)**  
-  - [Despre XSS](https://github.com/Dani780-C/Cyber-security/blob/main/learn/xss.md)  
+  <!-- - [Despre XSS](https://github.com/Dani780-C/Cyber-security/blob/main/learn/xss.md) -->
   - **Hacked:**
 
     **LOW**  
